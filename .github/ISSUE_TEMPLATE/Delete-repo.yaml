@@ -1,0 +1,74 @@
+name: Repository Transfer/Archival Request
+
+about: Request to transfer ownership of a repository to another user or organization, or to archive the repository.
+
+title: "[Transfer/Archival Request] "
+
+labels:
+  - repository transfer
+  - archival request
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please complete this template if you want to transfer ownership of the repository to another GitHub user or organization, or if you want to archive the repository.
+
+  - type: input
+    id: repository_name
+    attributes:
+      label: "Repository Name"
+      description: "Enter the name of the repository you want to transfer or archive."
+      placeholder: "Repository Name"
+    validations:
+      required: true
+
+  - type: input
+    id: current_owner
+    attributes:
+      label: "Current Owner"
+      description: "Enter the username or organization name of the current owner of the repository."
+      placeholder: "Current Owner"
+    validations:
+      required: true
+
+  - type: input
+    id: new_owner
+    attributes:
+      label: "New Owner"
+      description: "Enter the username or organization name of the new owner of the repository (for transfer requests only)."
+      placeholder: "New Owner"
+    validations:
+      required: false
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Reason for Transfer/Archival Request"
+      description: "Please explain why you want to transfer ownership of the repository to another user or organization, or why you want to archive the repository."
+      placeholder: "Reason for Request"
+    validations:
+      required: true
+
+  - type: toggle
+    id: archive
+    attributes:
+      label: "Archive Repository"
+      description: "Toggle this switch if you want to archive the repository instead of transferring it."
+      value: "no"
+      options:
+        - label: "Yes"
+          value: "yes"
+        - label: "No"
+          value: "no"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: "Additional Information"
+      description: "Please provide any additional information that may be relevant to your request."
+      placeholder: "Additional Information"
+    validations:
+      required: false
